@@ -2,20 +2,7 @@ import requests
 import countryCodeDecoder # type: ignore
 
 def getRandomNames() -> dict:
-    '''
-    Uses the randomuser.me api to return a random person's name
-
-    Returns
-    -------
-    a dictionary containing the persons title, first name, and last name
-    ex:
-    "name": {
-        "title": "Mr",
-        "first": "Guillermo",
-        "last": "Samaniego"
-    }
-    '''
-    response = requests.get('https://randomuser.me/api/')
+    response = requests.get(randomUserUrl)
     randomUserData = response.json()
     return randomUserData['results'][0]["name"]
 
