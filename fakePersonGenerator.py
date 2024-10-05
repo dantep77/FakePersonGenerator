@@ -2,7 +2,7 @@ import requests
 import countryCodeDecoder # type: ignore
 
 def getRandomNames() -> dict:
-    response = requests.get(randomUserUrl)
+    response = requests.get('https://randomuser.me/api/')
     randomUserData = response.json()
     return randomUserData['results'][0]["name"]
 
